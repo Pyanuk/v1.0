@@ -14,10 +14,15 @@ def calculator():
     print("8. Синус")
     print("9. Косинус")
     print("10. Тангенс")
+    print("11. Выход")
 
     operation = input("Введите номер операции: ")
 
-    if operation in ['1', '2', '3', '4']:
+    if operation == "11":
+        print("Выход из программы")
+        return
+
+    elif operation in ['1', '2', '3', '4']:
         pervoyechislo= float(input("Первое число:"))
         vtoroyechislo= float(input("Второе число:"))
 
@@ -38,21 +43,21 @@ def calculator():
                 print("Результат:",result)
     elif operation == '5':
         pervoyechislo= float(input("Введите число: "))
-        ctepen = float(input("Введите степень: "))
+        stepen = float(input("Введите степень: "))
         result = pervoyechislo ** stepen
         print("Результат: ", result)
     elif operation == '6':
-        number = float(input("Введите число для извлечения квадратного корня: "))
+        number = float(input("Введите число: "))
         if number < 0:
             print("Ошибка: отрицательное число")
         else:
             result = math.sqrt(number)
             print("Результат: ", result)
     elif operation == '7':
-        number = int(input("Введите число для вычисления факториала: "))
+        number = int(input("Введите число: "))
         result = 1
         if number < 0:
-            print("Ошибка: отрицательное число")
+            print("Отрицательное число")
         else:
             for i in range(1, number + 1):
                 result *= i
@@ -69,7 +74,10 @@ def calculator():
             result = math.tan(angle)
             print("Результат: ", result)
     else:
-        print("Ошибка: некорректный номер операции")
+        print("Некорректный номер операции")
+
+    print("\n")
+    calculator()
 
 
 calculator()
